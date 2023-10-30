@@ -3,7 +3,7 @@ const app = express();
 
 const cors = require("cors");
 
-require("dotenv").config();
+/* require("dotenv").config(); */
 require("express-async-errors");
 
 const authenticateUser = require("./middleware/authentication");
@@ -42,7 +42,7 @@ const start = () => {
   try {
     app.listen(port, console.log(`Server is running on port ${port}`));
   } catch (error) {
-    console.log(error);
+    console.log("Error is ",error);
   }
 };
 
