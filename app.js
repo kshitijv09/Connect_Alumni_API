@@ -13,6 +13,7 @@ const orderRouter = require("./routes/orders");
 const postRouter=require("./routes/posts");
 const userRouter=require("./routes/user");
 const alumniRouter=require("./routes/alumni")
+const alumniFundRouter=require("./routes/alumniFund")
 
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
@@ -40,6 +41,7 @@ app.use("/user",  orderRouter);
 app.use("/post",  postRouter);
 app.use("/user",  userRouter);
 app.use("/alumni",  alumniRouter);
+app.use("/alumniFund",  alumniFundRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

@@ -113,5 +113,57 @@ Example Request : {
     "company":"Celebal"
 }
 
+### Alumni Fund
+
+#### `GET /alumniFund/getDonations`
+
+Description: Gets list of donations
+ 
+Example Response:{
+    "funds": [
+        {
+            "donation_id": 1,
+            "amount": "10000",
+            "date": "25/12/2023",
+            "description": " Long detailed description",
+            "alumni_name": "Fahad Israr"
+        }
+    ]
+}
+
+#### `GET /alumniFund/:alumni_name`
+
+Description: Filters Donations by Alumni Name
+
+Parameters:
+- `alumni_name`: alumni name
+
+Example Response:{
+    "alumni": [
+        {
+            "alumni_id": 3,
+            "name": "Mayank Sonkar",
+            "grad_year": "2023",
+            "contact_info": "Linkedin",
+            "company": "ShortLoop"
+        }
+    ]
+}
+
+#### `POST /alumniFund/addDonation`
+
+Description: Adds donation
+
+Parameters:
+- `grad_year`: Graduation Year
+
+Example Request {
+    "donation_id":"001",
+    "amount":"10000",
+    "date":"25/12/2023",
+    "description":" Long detailed description",
+    "alumni_name":"Fahad Israr"
+}
+
 
 
