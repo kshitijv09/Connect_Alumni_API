@@ -12,6 +12,7 @@ const authRouter = require("./routes/auth");
 const orderRouter = require("./routes/orders");
 const postRouter=require("./routes/posts");
 const userRouter=require("./routes/user");
+const alumniRouter=require("./routes/alumni")
 
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
@@ -38,6 +39,7 @@ app.use("/auth", authRouter);
 app.use("/user",  orderRouter);
 app.use("/post",  postRouter);
 app.use("/user",  userRouter);
+app.use("/alumni",  alumniRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
