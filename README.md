@@ -8,7 +8,7 @@ This API allows users to perform various operations related to contacting an Alu
 
 ## Base URL
 
-The base URL for the API is: `http:localhost:500`
+The base URL for the API is: `https://alumni-api.onrender.com/`
 
 ## Authentication
 
