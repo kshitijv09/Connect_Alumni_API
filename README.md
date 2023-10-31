@@ -1,4 +1,4 @@
-# Sample API Documentation
+# Alumni API Documentation
 
 This document provides information about the AlumniAPI.
 
@@ -8,7 +8,7 @@ This API allows users to perform various operations related to contacting an Alu
 
 ## Base URL
 
-The base URL for the API is: `https://api.sample.com/v1`
+The base URL for the API is: `http:localhost:500`
 
 ## Authentication
 
@@ -24,11 +24,6 @@ The following endpoints are available in the Sample API:
 
 Description: Get all Posts made by Alumni as well as Student Council
 
-Parameters:
-- `param1`: [Description of the parameter]
-- `param2`: [Description of the parameter]
-
-Example Request : 
 Example Response:{
     "posts": [
         {
@@ -49,19 +44,13 @@ Example Request : {
     "title":"Technical Fest",
     "content":"Atrang"
 }
-Example Response: 
 
 ### Alumni
 
 #### `GET /alumni/getAlumni`
 
 Description: Gets list of alumni
-
-Parameters:
-- `param1`: [Description of the parameter]
-- `param2`: [Description of the parameter]
-
-Example Request : 
+ 
 Example Response:{
     "alumni": [
         {
@@ -81,7 +70,6 @@ Description: Filters Alumni by Company
 Parameters:
 - `company`: company name
 
-Example Request : 
 Example Response:{
     "alumni": [
         {
@@ -101,7 +89,6 @@ Description: Filters Alumni by Graduation Year
 Parameters:
 - `grad_year`: Graduation Year
 
-Example Request : 
 Example Response:{
     "alumni": [
         {
