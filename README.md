@@ -1,10 +1,10 @@
 # Sample API Documentation
 
-This document provides information about the API.
+This document provides information about the AlumniAPI.
 
 ## Introduction
 
-The Sample API allows users to perform various operations related to [provide a brief description of the purpose of the API]. This API is built to [mention the main functionalities and use cases].
+This API allows users to perform various operations related to contacting an Alumni. This API is built to enable smooth and secure communication between Students and Alumni.
 
 ## Base URL
 
@@ -12,21 +12,119 @@ The base URL for the API is: `https://api.sample.com/v1`
 
 ## Authentication
 
-The Sample API uses [OAuth 2.0](https://oauth.net/2/) for authentication. To access the endpoints, clients must include an access token in the request header. Refer to the Authentication section for more details.
+
 
 ## Endpoints
 
 The following endpoints are available in the Sample API:
 
-### Endpoint 1
+### Post
 
-#### `GET /endpoint1`
+#### `GET /getPosts`
 
-Description: [Brief description of what this endpoint does]
+Description: Get all Posts made by Alumni as well as Student Council
 
 Parameters:
 - `param1`: [Description of the parameter]
 - `param2`: [Description of the parameter]
 
-Example Request:
+Example Request : 
+Example Response:{
+    "posts": [
+        {
+            "name": "Sunny",
+            "title": "Technical Fest",
+            "content": "Atrang"
+        }
+    ]
+}
+
+#### `POST /addPost`
+
+Description: Adds a Post
+
+
+Example Request : {
+    "name":"Sunny",
+    "title":"Technical Fest",
+    "content":"Atrang"
+}
+Example Response: 
+
+### Alumni
+
+#### `GET /alumni/getAlumni`
+
+Description: Gets list of alumni
+
+Parameters:
+- `param1`: [Description of the parameter]
+- `param2`: [Description of the parameter]
+
+Example Request : 
+Example Response:{
+    "alumni": [
+        {
+            "alumni_id": 3,
+            "name": "Mayank Sonkar",
+            "grad_year": "2023",
+            "contact_info": "Linkedin",
+            "company": "ShortLoop"
+        }
+    ]
+}
+
+#### `GET /alumni/getAlumni/:company`
+
+Description: Filters Alumni by Company
+
+Parameters:
+- `company`: company name
+
+Example Request : 
+Example Response:{
+    "alumni": [
+        {
+            "alumni_id": 3,
+            "name": "Mayank Sonkar",
+            "grad_year": "2023",
+            "contact_info": "Linkedin",
+            "company": "ShortLoop"
+        }
+    ]
+}
+
+#### `GET /alumni/getAlumni/:grad_year`
+
+Description: Filters Alumni by Graduation Year
+
+Parameters:
+- `grad_year`: Graduation Year
+
+Example Request : 
+Example Response:{
+    "alumni": [
+        {
+            "alumni_id": 3,
+            "name": "Mayank Sonkar",
+            "grad_year": "2023",
+            "contact_info": "Linkedin",
+            "company": "ShortLoop"
+        }
+    ]
+}
+
+#### `POST /alumni/addAlumni`
+
+Description: Add Alumni
+
+Example Request : {
+    "alumni_id":"004",
+    "name":"Krishna Laddha",
+    "grad_year":"2023",
+    "contact_info":"linkedin_link",
+    "company":"Celebal"
+}
+
+
 

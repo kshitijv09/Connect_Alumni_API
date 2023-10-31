@@ -46,8 +46,26 @@ const getAlumniByCompany = async (req, res) => {
   );
 };
 
+const getAlumniByGraduationYear = async (req, res) => {
+    const grad_year = req.params.grad_year;
+    db.query(
+      "SELECT * FROM alumni WHERE grad_year = ?",
+      grad_year,
+      (err, results) => {
+        if (err) {
+          console.error(err);
+          res.status(500).json({ error: "Failed to retrieve alumni by grad_year" });
+        } else {
+          console.log(`Alumni from batch of ${grad_year} are `, results);
+          res.status(200).json({ alumni: results });
+        }
+      }
+    );
+  };
+
 module.exports = {
   getAllAlumni,
   addAlumni,
   getAlumniByCompany,
+  getAlumniByGraduationYear
 };
