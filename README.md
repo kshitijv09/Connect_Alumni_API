@@ -20,7 +20,7 @@ The following endpoints are available in the Sample API:
 
 ### Post
 
-#### `GET /getPosts`
+#### `GET post/getPost`
 
 Description: Get all Posts made by Alumni as well as Student Council
 
@@ -34,7 +34,7 @@ Example Response:{
     ]
 }
 
-#### `POST /addPost`
+#### `POST post/addPost`
 
 Description: Adds a Post
 
@@ -82,12 +82,31 @@ Example Response:{
     ]
 }
 
-#### `GET /alumni/getAlumni/:grad_year`
+#### `GET /alumni/getAlumniByYear/:grad_year`
 
 Description: Filters Alumni by Graduation Year
 
 Parameters:
 - `grad_year`: Graduation Year
+
+Example Response:{
+    "alumni": [
+        {
+            "alumni_id": 3,
+            "name": "Mayank Sonkar",
+            "grad_year": "2023",
+            "contact_info": "Linkedin",
+            "company": "ShortLoop"
+        }
+    ]
+}
+
+#### `GET /alumni/getAlumniByName/:name`
+
+Description: Filters Alumni by Name
+
+Parameters:
+- `grad_year`: name
 
 Example Response:{
     "alumni": [
@@ -131,7 +150,7 @@ Example Response:{
     ]
 }
 
-#### `GET /alumniFund/:alumni_name`
+#### `GET /alumniFund/getDonations/:alumni_name`
 
 Description: Filters Donations by Alumni Name
 
@@ -153,9 +172,6 @@ Example Response:{
 #### `POST /alumniFund/addDonation`
 
 Description: Adds donation
-
-Parameters:
-- `grad_year`: Graduation Year
 
 Example Request {
     "donation_id":"001",

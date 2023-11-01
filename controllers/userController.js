@@ -12,6 +12,25 @@ const getAllUsers = async (req, res) => {
   });
 };
 
+const getUserByName = async (req, res) => {
+
+    const userName=req.params.userName;
+    db.query(
+        "SELECT * FROM users WHERE user = ?",
+        userName,
+        (err, results) => {
+          if (err) {
+            console.error(err);
+            res.status(500).json({ error: "Failed to retrieve user by name" });
+          } else {
+            console.log(`User is `, results);
+            res.status(200).json({ user: results });
+          }
+        }
+      );
+  };
+
 module.exports = {
   getAllUsers,
+  getUserByName
 };

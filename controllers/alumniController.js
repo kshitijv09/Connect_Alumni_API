@@ -29,6 +29,24 @@ const addAlumni = async (req, res) => {
   );
 };
 
+const getAlumniByName = async (req, res) => {
+    const alumniName = req.params.name;
+    db.query(
+      "SELECT * FROM alumni WHERE name = ?",
+      alumniName,
+      (err, results) => {
+        if (err) {
+          console.error(err);
+          res.status(500).json({ error: "Failed to retrieve alumni by name" });
+        } else {
+          console.log(`Alumni is `, results);
+          res.status(200).json({ alumni: results });
+        }
+      }
+    );
+  };
+
+
 const getAlumniByCompany = async (req, res) => {
   const companyName = req.params.company;
   db.query(
@@ -67,5 +85,6 @@ module.exports = {
   getAllAlumni,
   addAlumni,
   getAlumniByCompany,
-  getAlumniByGraduationYear
+  getAlumniByGraduationYear,
+  getAlumniByName
 };
