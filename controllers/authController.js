@@ -37,7 +37,8 @@ const login = async (req, res) => {
       res.status(401).json({ error: "Invalid credentials" });
     } else {
       const user = results[0];
-
+      const username=user.username;
+console.log(user);
      /*  bcrypt.compare(password, user.password, (err, isMatch) => {
         if (err) {
           console.error(err);
@@ -60,7 +61,7 @@ const login = async (req, res) => {
           "my_secret_key",
           { expiresIn: "10d" }
         );
-        res.status(200).json({ token });
+        res.status(200).json({ token,username,groups:user.groups});
       } else {
         res.status(401).json({ error: "Invalid credentials" });
       }

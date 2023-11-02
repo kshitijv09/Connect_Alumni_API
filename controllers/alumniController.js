@@ -13,10 +13,10 @@ const getAllAlumni = async (req, res) => {
 };
 
 const addAlumni = async (req, res) => {
-  const { alumni_id, name, grad_year, contact_info, company } = req.body;
+  const { alumni_id, name, grad_year, contact_info, company,groups } = req.body;
   db.query(
-    "INSERT INTO alumni (alumni_id, name, grad_year, contact_info, company) VALUES (?, ?, ?, ?, ?)",
-    [alumni_id, name, grad_year, contact_info, company],
+    "INSERT INTO alumni (alumni_id, name, grad_year, contact_info, company,groups) VALUES (?, ?, ?, ?, ?,?)",
+    [alumni_id, name, grad_year, contact_info, company,groups],
     (err, result) => {
       if (err) {
         console.error(err);

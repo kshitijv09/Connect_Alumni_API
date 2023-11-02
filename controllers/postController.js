@@ -14,10 +14,10 @@ const getPosts=async(req,res)=>{
 }
 
 const addPost = async (req, res) => {
-    const { name,title, content } = req.body;
+    const { name,title, content,groups } = req.body;
     db.query(
-      "INSERT INTO posts (name, title, content) VALUES (?, ?,?)",
-      [name,title, content],
+      "INSERT INTO posts (name, title, content,groups) VALUES (?, ?,?,?)",
+      [name,title, content,groups],
       (err, result) => {
         if (err) {
           console.error(err);
@@ -30,21 +30,8 @@ const addPost = async (req, res) => {
     );
   };
   
-  const deletePost = async (req, res) => {
-   /*  const postId = req.params.id;
-    db.query("DELETE FROM posts WHERE id = ?", postId, (err, result) => {
-      if (err) {
-        console.error(err);
-        res.status(500).json({ error: "Failed to delete post" });
-      } else {
-        console.log("Post deleted successfully");
-        res.status(200).json({ message: "Post deleted successfully" });
-      }
-    }); */
-  };
 
 module.exports={
 addPost,
-getPosts,
-deletePost
+getPosts
 }
