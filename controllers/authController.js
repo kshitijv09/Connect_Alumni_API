@@ -38,7 +38,7 @@ const login = async (req, res) => {
     } else {
       const user = results[0];
 
-      bcrypt.compare(password, user.password, (err, isMatch) => {
+     /*  bcrypt.compare(password, user.password, (err, isMatch) => {
         if (err) {
           console.error(err);
           res.status(500).json({ error: "Internal server error" });
@@ -52,7 +52,18 @@ const login = async (req, res) => {
           );
           res.status(200).json({ token });
         }
-      });
+      }); */
+
+      if (password === user.password) {
+        const token = jwt.sign(
+          { userId: user.id, username: user.username },
+          "my_secret_key",
+          { expiresIn: "10d" }
+        );
+        res.status(200).json({ token });
+      } else {
+        res.status(401).json({ error: "Invalid credentials" });
+      }
     }
   });
 };
