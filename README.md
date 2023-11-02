@@ -171,7 +171,7 @@ Example Response:{
 
 #### `POST /alumniFund/addDonation`
 
-Description: Adds donation
+Description: Add donation
 
 Example Request {
     "donation_id":"001",
