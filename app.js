@@ -36,7 +36,7 @@ app.use(helmet());
 app.use(xss());
 
 app.use("/auth", authRouter);
-app.use("/post",  /* authenticateUser, */postRouter);
+app.use("/post",  postRouter);
 app.use("/user",  userRouter);
 app.use("/alumni",  alumniRouter);
 app.use("/alumniFund",  alumniFundRouter);
