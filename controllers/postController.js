@@ -13,6 +13,18 @@ const getPosts=async(req,res)=>{
   });
 }
 
+const getPostByGroup=async(req,res)=>{
+  db.query("SELECT * FROM posts where posts.groups='alumni' ", (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Failed to retrieve users" });
+    } else {
+        console.log("List of Posts is ",results);
+      res.status(200).json({ posts: results }); // Assuming the results variable contains the users
+    }
+  });
+}
+
 const addPost = async (req, res) => {
     const { name,title, content,groups } = req.body;
     db.query(
@@ -33,5 +45,6 @@ const addPost = async (req, res) => {
 
 module.exports={
 addPost,
-getPosts
+getPosts,
+getPostByGroup
 }

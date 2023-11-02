@@ -18,7 +18,7 @@ const alumniFundRouter=require("./routes/alumniFund")
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 const helmet = require("helmet");
 const rateLimiter = require("express-rate-limit");
