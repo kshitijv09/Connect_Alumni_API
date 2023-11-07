@@ -18,6 +18,18 @@ The base URL for the API is: `https://alumni-api.onrender.com/`
 
 The following endpoints are available in the Sample API:
 
+### Auth
+
+#### `POST auth/login`
+
+Description: Get jsonwebtoken userid and group
+
+Example Request:{
+    "email":"aman@kumar.com",
+    "password":"amankumar"
+}
+
+
 ### Post
 
 #### `GET post/getPost`
