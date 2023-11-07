@@ -144,6 +144,16 @@ Example Request : {
     "company":"Celebal"
 }
 
+#### `PATCH /alumni/updateAlumni`
+
+Description: Update
+
+Example Request:{
+    "name":"Krishna Laddha",
+    "contact_info":"https://www.linkedin",
+    "company":"Celebal"
+}
+
 ### Alumni Fund
 
 #### `GET /alumniFund/getDonations`

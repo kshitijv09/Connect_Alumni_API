@@ -29,6 +29,30 @@ const addAlumni = async (req, res) => {
   );
 };
 
+
+const updateAlumni = async (req, res) => {
+  const { name, company, contact_info } = req.body;
+  db.query(
+    "UPDATE alumni SET company = ?, contact_info = ? WHERE name = ?",
+    [company, contact_info, name],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).json({ error: "Failed to update alumni" });
+      } else {
+        if (result.affectedRows > 0) {
+          console.log("Alumni updated successfully");
+          res.status(200).json({ message: "Alumni updated successfully" });
+        } else {
+          console.log("Alumni not found");
+          res.status(404).json({ error: "Alumni not found" });
+        }
+      }
+    }
+  );
+};
+
+
 const getAlumniByName = async (req, res) => {
     const alumniName = req.params.name;
     db.query(
@@ -86,5 +110,6 @@ module.exports = {
   addAlumni,
   getAlumniByCompany,
   getAlumniByGraduationYear,
-  getAlumniByName
+  getAlumniByName,
+  updateAlumni
 };
