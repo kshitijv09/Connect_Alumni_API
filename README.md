@@ -197,7 +197,7 @@ Description: Add donation
 
 Example Request {
     "donation_id":"001",
-    "amount":"10000",
+    "amount":"1000",
     "date":"25/12/2023",
     "description":" Long detailed description",
     "alumni_name":"Fahad Israr"
