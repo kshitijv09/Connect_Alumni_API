@@ -126,7 +126,7 @@ Example Response:{
             "alumni_id": 3,
             "name": "Mayank Sonkar",
             "grad_year": "2023",
-            "contact_info": "Linkedin",
+            "contact_info": "Linkedin..link",
             "company": "ShortLoop"
         }
     ]
